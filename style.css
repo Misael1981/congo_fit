@@ -195,7 +195,7 @@
   }
 
   .nav__logo img {
-    width: 1.25rem;
+    width: 5rem;
   }
 
   .nav__toggle {
@@ -766,9 +766,11 @@
   }
 
   .footer__group {
+    background: black;
     margin-top: 5rem;
     justify-items: center;
     row-gap: 2rem;
+    align-items: center;
   }
 
   .footer__social {
@@ -847,7 +849,8 @@
   /* For small devices */
   @media screen and (max-width: 540px) {
     .container {
-      margin: 0 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
 
     .section__titles, .choose__triangle {
@@ -855,11 +858,11 @@
       row-gap: .25rem;
     }
 
-    .home__triangle {
+    .home__triangle, .choose__triangle {
       height: 255px;
     }
 
-    .home__triangle-3 {
+    .home__triangle-3, .choose__triangle-1 {
       width: 260px;
     }
 
@@ -880,15 +883,16 @@
       margin: 0 auto;
     }
 
+    /*
     .program__container {
       grid-template-columns: repeat(2, 225px);
       gap: 2.5rem;
-    }
+    } */
 
   }
   
   /* For medium devices */
-  @media screen and (min-width: 540px) and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     .nav__menu {
       width: 50%;
     }
@@ -898,13 +902,19 @@
       align-items: center;
     }
 
-    .home__data, .choose__content,
-    .choose__data, .choose__description {
+    .home__data,
+    .choose__content .section__data,
+    .choose__description,
+    .calculate__description {
       text-align: initial;
     }
 
+    .logos__container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     .program__container {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 225px);
       gap: 2.5rem;
     }
 
@@ -912,8 +922,18 @@
       order: 1;
     }
 
+    .choose__data {
+      justify-items: flex-start;
+    }
+
+    .choose__content .section__titles,
+    .calculate__content .section__titles {
+      justify-content: initial;
+    }
+
     .pricing__container {
       grid-template-columns: repeat(2, 285px);
+      gap: 2.5rem;
     }
 
     .calculate__container {
@@ -942,7 +962,7 @@
 
   @media screen and (min-width: 1023px) {
     .nav {
-      height: calc(--header-height) + 2rem;
+      height: calc var(--header-height) + 2rem;
     }
 
     .nav__menu {
@@ -963,7 +983,7 @@
     .section {
       padding: 7rem 0 0;
     }
-
+    
     .section__subtitle {
       font-size: 2rem;
     }
@@ -1011,10 +1031,6 @@
       width: 190px;
     }
 
-    .logos__container {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
     .choose__overflow {
       overflow: hidden;
     }
@@ -1024,7 +1040,7 @@
     }
 
     .choose__triangle {
-      height: 760px;
+      height: 700px;
     }
 
     .choose__triangle-1 {
@@ -1037,6 +1053,10 @@
 
     .choose__triangle-3 {
       width: 145px;
+    }
+
+    .footer {
+      padding-bottom: 3rem;
     }
 
     .footer__form {
@@ -1121,10 +1141,10 @@
       .choose__img {
         position: relative;
       }
-
+      /*
       .choose__content {
         order: 2;
-      }
+      }*/
 
       .choose__data {
         grid-template-columns: repeat(2, max-content);
@@ -1138,7 +1158,7 @@
 
       .pricing__container {
         padding-top: 3rem;
-        grid-template-columns: repeat(3, 328px);
+        grid-template-columns: repeat(3, 320px);
       }
 
       .pricing__card {
